@@ -1,5 +1,5 @@
 
-I'm Karl Cyrus Geron, I want to Upskill. I want to pursue Java Programming mainly using SpringBoot
+I'm Karl Cyrus Geron, I want to Upskill. I want to pursue Java Programming mainly using SpringBoot.
 Currently learning front-end, by the end of the Month of July, planning to shift on learning back-end using Java.
 
 
