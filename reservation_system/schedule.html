@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="schedule.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hp_background"> 
+        <div class="form_container">
+            <h1>Pet Grooming Reservation Form</h1>
+            <form method="POST" action="schedule.php" class="reservation_form">
+                <div class="form_input">
+                <label for="customer_name">Your Name:</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+                </div>
+
+                <div class="form_input">
+                <label for="pet_name">Pet Name:</label>
+                <input type="text" id="pet_name" name="pet_name" required>
+                </div>
+
+                <div class="form_input">
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <option Value="Select Option">Select Option</option>
+                    <option value="Bath">Bath</option>
+                    <option value="Haircut">Haircut</option>
+                    <option value="Nail Trimming">Nail Trimming</option>
+                    <option value="Full Grooming">Full Grooming</option>
+                </select>
+                </div>
+
+                <div class="form_input">
+                <label for="reservation_date">Date:</label>
+                <input type="date" id="reservation_date" name="reservation_date" required>
+                </div>
+
+                <div class="form_input">
+                <label for="reservation_time">Time:</label>
+                <input type="time" id="reservation_time" name="reservation_time" required>
+                </div>
+
+                <div class="form_input">
+                <label for="contact">Contact Info:</label>
+                <input type="text" id="contact" name="contact" required>
+                </div>  
+
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="table_container">
+            <h1>Schedule Records</h1>
+                <form method="GET" action="schedule.php" class="new_btn">
+                    <button type="submit" class="new_button">New</button>
+                </form>        
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Pet Name</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
