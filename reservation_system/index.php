@@ -1,34 +1,67 @@
 <?php
-include 'db_connection.php'; // connect to DB
+include 'db_connection.php'; // Connect to DB
+session_start();
 
-// Check if form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-    // Check if user exists in the database
+    
     $sql = "SELECT * FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql); 
-    $stmt->bind_param("s", $username); // "s" = string
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Check if user was found
+   
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // Compare passwords (later we’ll use hashed passwords!)
         if ($password === $user['password']) {
             header("Location: schedule.php"); 
             exit(); 
         } else {
-            echo "Incorrect password.";
+            $error = "Incorrect password.";
         }
     } else {
-        echo "Username not found.";
+        $error = "Username not found.";
     }
 
     $stmt->close();
     $conn->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="hp_background"> 
+        <div class="form_container">
+            <h1>Login</h1>
+            <?php if (!empty($error)): ?>
+                <p style="color: red; text-align: center;"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
+            <form method="POST" action="">
+                <div class="form_input">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required placeholder="Username">
+                </div>
+
+                <div class="form_input">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required placeholder="Password">
+                </div>
+
+                <button type="submit" class="login_button">Login</button>
+            </form>
+        </div>
+    </div>  
+</body>
+</html>
