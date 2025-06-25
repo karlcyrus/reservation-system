@@ -1,5 +1,5 @@
 <?php
-// 1. Connect to the database
+// 1. Connect to the database using PDO
 include 'db_connection.php';
 
 $editing = false;
@@ -11,11 +11,8 @@ if (isset($_GET['edit_id'])) {
     $edit_id = $_GET['edit_id'];
 
     $stmt = $conn->prepare("SELECT * FROM reservations WHERE id = ?");
-    $stmt->bind_param("i", $edit_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $edit_data = $result->fetch_assoc();
-    $stmt->close();
+    $stmt->execute([$edit_id]);
+    $edit_data = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 // 3. Insert or update form data
@@ -32,34 +29,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $edit_id = $_POST['edit_id'];
         $sql = "UPDATE reservations SET customer_name=?, pet_name=?, service=?, reservation_date=?, reservation_time=?, contact=? WHERE id=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssssi", $customer_name, $pet_name, $service, $reservation_date, $reservation_time, $contact, $edit_id);
+        $stmt->execute([$customer_name, $pet_name, $service, $reservation_date, $reservation_time, $contact, $edit_id]);
     } else {
         // Insert new reservation
         $sql = "INSERT INTO reservations (customer_name, pet_name, service, reservation_date, reservation_time, contact)
                 VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $customer_name, $pet_name, $service, $reservation_date, $reservation_time, $contact);
+        $stmt->execute([$customer_name, $pet_name, $service, $reservation_date, $reservation_time, $contact]);
     }
 
-    $stmt->execute();
-    $stmt->close();
-
-    // Redirect to avoid resubmission
+    // Redirect to avoid form resubmission
     header("Location: schedule.php");
     exit();
 }
 
-// 4. Fetch all reservations from DB
+// 4. Fetch all reservations
 $reservations = [];
 $sql = "SELECT * FROM reservations ORDER BY reservation_date, reservation_time";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $reservations[] = $row;
-    }
-}
-$conn->close();
+$stmt = $conn->query($sql);
+$reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Close connection
+$conn = null;
 ?>
+
 
 <!-- HTML starts here -->
 <!DOCTYPE html>
