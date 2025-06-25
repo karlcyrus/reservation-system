@@ -1,11 +1,11 @@
 # Use PHP 8.0 with Apache
 FROM php:8.0-apache
 
-# Copy project files to the Apache web root
-COPY . /var/www/html/
+# Install mysqli extension
+RUN docker-php-ext-install mysqli
 
-# Enable Apache mod_rewrite if needed
+# Enable Apache mod_rewrite (optional)
 RUN a2enmod rewrite
 
-# Optional: set correct file permissions (if needed)
-RUN chown -R www-data:www-data /var/www/html
+# Copy all project files to the container's web root
+COPY . /var/www/html/
