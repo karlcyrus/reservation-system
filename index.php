@@ -1,37 +1,32 @@
 <?php
-include 'db_connection.php'; // Connect to DB
+include 'db_connection.php'; // Connect to PostgreSQL using PDO
 session_start();
 
+$error = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    
     $sql = "SELECT * FROM users WHERE username = ?";
-    $stmt = $conn->prepare($sql); 
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$username]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-   
-    if ($result->num_rows === 1) {
-        $user = $result->fetch_assoc();
-
+    if ($user) {
+        // You can use password_verify() if using hashed passwords
         if ($password === $user['password']) {
-            header("Location: schedule.php"); 
-            exit(); 
+            header("Location: schedule.php");
+            exit();
         } else {
             $error = "Incorrect password.";
         }
     } else {
         $error = "Username not found.";
     }
-
-    $stmt->close();
-    $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
