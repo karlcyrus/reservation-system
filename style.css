@@ -5,13 +5,47 @@ body{
 }
 
 .hp_background{
-    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    background: url("./Images/pethomepage.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
     position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.navbar .logo {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    left: 40px;
+    color: #DAA520;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.navbar .nav-links a:hover {
+    color: #007BFF;
 }
 
 h1{
@@ -21,14 +55,15 @@ h1{
 .form_container{
     width: 400px;
     padding: 30px;
-    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    background-color: rgba(200, 230, 255, 0.8); /* soft pastel blue */
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     animation: float 4s ease-in-out infinite;
+    opacity: 0.9;
 }
 
 form{
@@ -67,7 +102,7 @@ input[type="submit"]{
 
 .login_button {
     padding: 12px 25px;
-    background: linear-gradient(to right, #43cea2, #185a9d); /* gradient green-blue */
+    background-color: #DAA520;
     color: white;
     border: none;
     border-radius: 30px;
