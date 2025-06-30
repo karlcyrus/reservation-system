@@ -5,26 +5,29 @@ body{
 }
 
 .hp_background{
-    background: url("./Images/pethomepage.jpg");
+    background: url("./Images/cat-hp.avif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
     position: relative;
+    z-index: 1;
 }
 
-.navbar {
+.custom-navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    padding: 10px 40px;
+    padding: 0 40px;
+    height: 70px;    
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
+    z-index: 1000;
 }
 
-.navbar .logo {
+.custom-navbar .logo {
     font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
     font-weight: bold;
@@ -33,19 +36,28 @@ body{
     color: #DAA520;
 }
 
-.navbar .nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.navbar .nav-links a {
+.custom-navbar .custom-nav-links a {
     text-decoration: none;
     color: #333;
     font-size: 1.3rem;
 }
 
-.navbar .nav-links a:hover {
+.custom-navbar .custom-nav-links a:hover {
     color: #007BFF;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 3%;
 }
 
 h1{
@@ -57,8 +69,8 @@ h1{
     padding: 30px;
     background-color: rgba(200, 230, 255, 0.8); /* soft pastel blue */
     position: absolute;
-    top: 50%;
-    left: 75%;
+    top: 45%;
+    left: 25%;
     transform: translate(-50%, -50%);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -118,3 +130,36 @@ input[type="submit"]{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+@media (min-width: 769px) {
+    .custom-nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-navbar {
+        justify-content: space-between;
+    }
+
+    .custom-nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 40px;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        border-radius: 10px;
+    }
+
+    .custom-nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
