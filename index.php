@@ -47,52 +47,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="#">About Us</a>
         </div>
     </div>
-    <div class="hp_background"> 
-        <section>
-            <div class="form_container">
-                <h1>Login</h1>
-                <?php if (!empty($error)): ?>
-                    <p style="color: red; text-align: center;"><?= htmlspecialchars($error) ?></p>
-                <?php endif; ?>
-                <form method="POST" action="">
-                    <div class="form_input">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" required placeholder="Username">
-                    </div>
-
-                    <div class="form_input">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" required placeholder="Password">
-                    </div>
-
+    <section class="hp_background">
+        <div class="form_container">
+            <h1>Login</h1>
+            <?php if (!empty($error)): ?>
+                <p style="color: red; text-align: center;"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
+            <form method="POST" action="">
+                <div class="form_input">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required placeholder="Username">
+                </div>
+                <div class="form_input">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required placeholder="Password">
+                </div>
                     <button type="submit" class="login_button">Login</button>
                 </form>
             </div>
-        </section>
-        <section id="about-us" class="d-flex align-items-center py-5" style="background: #ffffff;">
-            <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
-                <div class="mb-4 mb-lg-0">
-                    <img src="Images/pic-dog.jpg" class="img-fluid rounded shadow" style="max-width: 400px;" alt="Dog">
-                </div>
-                <div class="ml-lg-5 p-5">
-                    <h3 class="text-muted mb-5">Why people choose us</h3>
-                    <h2 class="text-primary mb-4">A few reasons why people prefer our services</h2>
-                    <p class="mb-4">Since our establishment in 1999, we have worked to deliver the best grooming services for your dogs and cats. Pet owners across the US choose our salon for:</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">✔ Healthy and safe environment</li>
-                        <li class="mb-2">✔ High-quality and sterile equipment</li>
-                        <li class="mb-2">✔ Different grooming styles for your pets</li>
-                        <li>✔ Convenient and affordable</li>
-                    </ul>
-                    <a href="#" class="btn btn-warning mt-4 fs-5">Book Now</a>
+    </section>
+    <section id="about-us" class="d-flex align-items-center py-5" style="background: #ffffff;">
+        <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+            <div class="image-container text-center text-lg-start">
+                <div class="image-wrapper">
+                    <img src="Images/pic-dog.jpg" class="img-fluid rounded shadow" alt="Dog">
                 </div>
             </div>
-        </section>
-        <section style="background: rgb(229, 228, 219)">
-
-        </section>
-    </div>  
-
+            <div class="text-content ml-lg-5 p-5">
+                <h3 class="text-muted mb-5">Why people choose us</h3>
+                <h2 class="text-primary mb-4">A few reasons why people prefer our services</h2>
+                <p class="mb-4">Since our establishment in 1999, we have worked to deliver the best grooming services for your dogs and cats. Pet owners across the US choose our salon for:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2">✔ Healthy and safe environment</li>
+                    <li class="mb-2">✔ High-quality and sterile equipment</li>
+                    <li class="mb-2">✔ Different grooming styles for your pets</li>
+                    <li>✔ Convenient and affordable</li>
+                </ul>
+                <a href="#" class="btn btn-warning mt-4 fs-5">Book Now</a>
+            </div>
+        </div>
+    </section>
 
 <script src="script.js"></script>
 </body>
