@@ -4,15 +4,22 @@ body{
     height: 100%;
 }
 
-.hp_background{
+.hp_background {
     background: url("./Images/cat-hp.avif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+
+    min-height: 100vh; /* ✅ more reliable than fixed height */
+    width: 100%;
     position: relative;
     z-index: 1;
+
+    display: flex;               /* ✅ allow centering the form easily */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;               /* ✅ spacing on small screens */
+    box-sizing: border-box;
 }
 
 .custom-navbar {
