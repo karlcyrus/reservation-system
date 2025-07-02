@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="custom-navbar">
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="#">About Us</a>
         </div>
     </div>
-    <section class="hp_background">
+    <section class="hp_background fade-slide">
         <div class="form_container">
             <h1>Login</h1>
             <?php if (!empty($error)): ?>
@@ -66,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
     </section>
-    <section id="about-us" class="d-flex align-items-center py-5" style="background: #ffffff;">
+    <section id="about-us" class="d-flex align-items-center py-5  fade-slide" style="background: #ffffff;">
         <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
             <div class="image-container text-center text-lg-start">
                 <div class="image-wrapper">
@@ -84,6 +85,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li>✔ Convenient and affordable</li>
                 </ul>
                 <a href="#" class="btn btn-warning mt-4 fs-5">Book Now</a>
+            </div>
+        </div>
+    </section>
+    <section id="service-offer" class="fade-slide">
+        <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+            <h1 class="mb-3" style="color: rgb(54, 166, 235)">Let us take care of your pets! Grooming? Check-up? Safe hands?</h1>
+            <h1 class="mb-5" style="color: rgb(233, 65, 73)">Book now!</h1>
+            <h2 class="mb-4">Our Services</h2>
+            <p class="mb-4">Explore our premium grooming and veterinary services tailored for your pets.</p>
+            <div class="container service-container">
+                <div class="service-box">
+                    <div class="grooming-service">
+                        <i class="fa-solid fa-shower fa-3x" style="color: rgb(233, 65, 73)"></i>
+                    </div>
+                    <p class="service-text">Grooming Service</p>
+                    <p class="service-desc">Professional grooming to keep your pets clean and stylish.</p>
+                </div>
+                
+                <div class="service-box">
+                    <div class="checkup-service">
+                        <i class="fa-solid fa-check-to-slot fa-3x" style="color: rgb(233, 65, 73)"></i>
+                    </div>
+                    <p class="service-text">Check-up Service</p>
+                    <p class="service-desc">Regular health checks to keep your furry friends in top shape.</p>
+                </div>
+
+                <div class="service-box">
+                    <div class="vaccine-service">  
+                        <i class="fa-solid fa-syringe fa-3x" style="color: rgb(233, 65, 73)"></i>
+                    </div>
+                    <p class="service-text">Vaccinatione Service</p>
+                    <p class="service-desc">Protect your pets with essential and up-to-date vaccinations.</p> 
+                </div>
+
+                <div class="service-box">
+                    <div class="medical-service">
+                        <i class="fa-solid fa-suitcase-medical fa-3x" style="color: rgb(233, 65, 73)"></i>
+                    </div>
+                    <p class="service-text">Medical Service</p>
+                    <p class="service-desc">Safe and professional medical treatments for your pet’s well-being.</p>
+                </div>
             </div>
         </div>
     </section>
