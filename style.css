@@ -138,6 +138,12 @@ input[type="submit"]{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+#about-us {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
 #about-us .image-container {
     flex: 0 0 50%;
     display: flex;
@@ -147,7 +153,7 @@ input[type="submit"]{
 
 #about-us img {
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -155,6 +161,61 @@ input[type="submit"]{
 
 #about-us .text-content {
     flex: 1;
+}
+
+#service-offer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eddda9; /* or any bg color/image */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center; /* or space-between / space-around / space-evenly */
+    gap: 5rem;             /* space between divs */
+    flex-wrap: wrap;         /* wrap on smaller screens */
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.service-box {
+    display: flex;
+    flex-direction: column; /* ✅ Stack icon & text vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 180px;
+}
+
+.grooming-service,
+.checkup-service,
+.vaccine-service,
+.medical-service {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #bfc1c1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.service-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+    line-height: 1.4;
 }
 
 @media (max-width: 768px) {
@@ -226,4 +287,15 @@ input[type="submit"]{
         width: 90%; /* or any percent-based width to fit smaller screens */
         max-width: 400px;
     }
+}
+
+.fade-slide {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below */
+    transition: all 0.8s ease-in-out;
+}
+
+.fade-slide.show {
+    opacity: 1;
+    transform: translateY(0);
 }
