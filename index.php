@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,12 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="logo">MediPet</div>
     <div class="menu-toggle">&#9776;</div> <!-- burger icon -->
         <div class="custom-nav-links">
-            <a href="#">Home</a>
-            <a href="#">Service</a>
-            <a href="#">About Us</a>
+            <a href="#home">Home</a>
+            <a href="#about-us">About Us</a>
+            <a href="#service-offer">Service</a>
         </div>
     </div>
-    <section class="hp_background fade-slide">
+    <section id="home" class="hp_background fade-slide">
         <div class="form_container">
             <h1>Login</h1>
             <?php if (!empty($error)): ?>
@@ -90,41 +89,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
     <section id="service-offer" class="fade-slide">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center">
-            <h1 class="mb-3" style="color: rgb(54, 166, 235)">Let us take care of your pets! Grooming? Check-up? Safe hands?</h1>
-            <h1 class="mb-5" style="color: rgb(233, 65, 73)">Book now!</h1>
-            <h2 class="mb-4">Our Services</h2>
-            <p class="mb-4">Explore our premium grooming and veterinary services tailored for your pets.</p>
+            <h1 class="mb-3" style="color:	#5D1049">Let us take care of your pets! Grooming? Check-up? Safe hands?</h1>
+            <h1 class="mb-5" style="color: #FF6F00">Book now!</h1>
+            <h2 class="mb-4" style="color: #263238">Our Services</h2>
+            <p class="mb-4" style="color: #546E7A">Explore our premium grooming and veterinary services tailored for your pets.</p>
             <div class="container service-container">
                 <div class="service-box">
                     <div class="grooming-service">
-                        <i class="fa-solid fa-shower fa-3x" style="color: rgb(233, 65, 73)"></i>
+                        <i class="fa-solid fa-shower fa-3x" style="color: #00838F"></i>
                     </div>
-                    <p class="service-text">Grooming Service</p>
-                    <p class="service-desc">Professional grooming to keep your pets clean and stylish.</p>
+                    <p class="service-text" style="color: #37474F">Grooming Service</p>
+                    <p class="service-desc" style="color: #607D8B">Professional grooming to keep your pets clean and stylish.</p>
                 </div>
                 
                 <div class="service-box">
                     <div class="checkup-service">
-                        <i class="fa-solid fa-check-to-slot fa-3x" style="color: rgb(233, 65, 73)"></i>
+                        <i class="fa-solid fa-check-to-slot fa-3x" style="color: #00838F"></i>
                     </div>
-                    <p class="service-text">Check-up Service</p>
-                    <p class="service-desc">Regular health checks to keep your furry friends in top shape.</p>
+                    <p class="service-text" style="color: #37474F">Check-up Service</p>
+                    <p class="service-desc" style="color: #607D8B">Regular health checks to keep your furry friends in top shape.</p>
                 </div>
 
                 <div class="service-box">
                     <div class="vaccine-service">  
-                        <i class="fa-solid fa-syringe fa-3x" style="color: rgb(233, 65, 73)"></i>
+                        <i class="fa-solid fa-syringe fa-3x" style="color: #00838F"></i>
                     </div>
-                    <p class="service-text">Vaccinatione Service</p>
-                    <p class="service-desc">Protect your pets with essential and up-to-date vaccinations.</p> 
+                    <p class="service-text" style="color: #37474F">Vaccinatione Service</p>
+                    <p class="service-desc" style="color: #607D8B">Protect your pets with essential and up-to-date vaccinations.</p> 
                 </div>
 
-                <div class="service-box">
+                <div class="service-box"> 
                     <div class="medical-service">
-                        <i class="fa-solid fa-suitcase-medical fa-3x" style="color: rgb(233, 65, 73)"></i>
+                        <i class="fa-solid fa-suitcase-medical fa-3x" style="color: #00838F"></i>
                     </div>
-                    <p class="service-text">Medical Service</p>
-                    <p class="service-desc">Safe and professional medical treatments for your pet’s well-being.</p>
+                    <p class="service-text" style="color: #37474F">Medical Service</p>
+                    <p class="service-desc" style="color: #607D8B">Safe and professional medical treatments for your pet’s well-being.</p>
                 </div>
             </div>
         </div>

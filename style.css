@@ -4,6 +4,10 @@ body{
     height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hp_background {
     background: url("./Images/cat-hp.png");
     background-size: cover;
@@ -23,15 +27,20 @@ body{
 }
 
 .custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: white;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     padding: 0 40px;
-    height: 70px;    
+    height: 70px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1000;
 }
 
 .custom-navbar .logo {
@@ -168,7 +177,7 @@ input[type="submit"]{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #eddda9; /* or any bg color/image */
+    background-color: #FFF8E1; /* or any bg color/image */
     padding: 2rem;
     box-sizing: border-box;
 }
@@ -198,7 +207,7 @@ input[type="submit"]{
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background-color: #bfc1c1;
+    background-color: #E0F7FA;
     display: flex;
     align-items: center;
     justify-content: center;
