@@ -47,8 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="#service-offer">Service</a>
         </div>
     </div>
-    <section id="home" class="hp_background fade-slide">
-        <div class="form_container">
+    <section id="home" class="hp_background">
+        <div class="form_container fade-slide">
             <h1>Login</h1>
             <?php if (!empty($error)): ?>
                 <p style="color: red; text-align: center;"><?= htmlspecialchars($error) ?></p>
@@ -128,7 +128,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </section>
-
+    <section id="fourth-section">
+        <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+            <h1 class="fade-slide">What we offer</h1>
+        </div>
+    </section>
 <script src="script.js"></script>
 </body>
 </html>

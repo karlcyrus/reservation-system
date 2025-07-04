@@ -227,6 +227,16 @@ input[type="submit"]{
     line-height: 1.4;
 }
 
+#fourth-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7bf16d; /* or any bg color/image */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     #about-us .image-container {
         width: 100%;
