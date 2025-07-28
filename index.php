@@ -131,6 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section id="fourth-section">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center">
             <h1 class="fade-slide">What we offer</h1>
+            <h2>Services you can find easily!</h2>
         </div>
     </section>
 <script src="script.js"></script>
